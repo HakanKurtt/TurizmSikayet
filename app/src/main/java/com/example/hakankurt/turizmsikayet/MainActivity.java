@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //setting toolbar color
-        toolbar.setBackgroundColor(Color.parseColor("#84bd00"));
+        toolbar.setBackgroundColor(Color.parseColor("#9fe025"));
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(4).setIcon(R.drawable.ic_person_black_24dp);
 
         //setting tablayout color
-        tabLayout.setBackgroundColor(Color.parseColor("#84bd00"));
+        tabLayout.setBackgroundColor(Color.parseColor("#9fe025"));
 
     }
 
