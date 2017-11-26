@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1022141324557",
+    "firebase_url": "https://turizmsikayet.firebaseio.com",
+    "project_id": "turizmsikayet",
+    "storage_bucket": "turizmsikayet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022141324557:android:d2b386ca207e06a5",
+        "android_client_info": {
+          "package_name": "com.example.hakankurt.turizmsikayet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022141324557-foufejqs3fasfptc15v5kr9rgp2p8p8v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hakankurt.turizmsikayet",
+            "certificate_hash": "39f7f51a87f0d29765050d2d18c5fdb8d5a5143a"
+          }
+        },
+        {
+          "client_id": "1022141324557-b8f8dmirl32cfrt3jfaa8vkohpabvkkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-cdK8wPFX_CrGSCJ_E_J7jN6M0H1QFDo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1022141324557-b8f8dmirl32cfrt3jfaa8vkohpabvkkk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

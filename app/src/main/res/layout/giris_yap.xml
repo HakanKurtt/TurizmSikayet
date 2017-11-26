@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/epostaEdt"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp"
+        android:ems="10"
+        android:hint="@string/giris_eposta"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/sifreEdt"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/epostaEdt"
+        android:layout_below="@+id/epostaEdt"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/giris_sifre"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/girisBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sifreEdt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:text="@string/giris_giris" />
+
+    <TextView
+        android:id="@+id/sifreUnuttumTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/sifreEdt"
+        android:layout_below="@+id/girisBtn"
+        android:layout_marginTop="52dp"
+        android:text="@string/sifre_unuttum" />
+
+    <TextView
+        android:id="@+id/uyeOlText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sifreUnuttumTxt"
+        android:layout_alignBottom="@+id/sifreUnuttumTxt"
+        android:layout_alignEnd="@+id/sifreEdt"
+        android:text="@string/uye_ol" />
+    <ProgressBar
+        android:id="@+id/progressbarGiris"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/epostaEdt"
+        android:layout_marginEnd="13dp"
+        android:layout_toStartOf="@+id/epostaEdt"
+        app:srcCompat="@drawable/icon_phone_24" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_alignTop="@+id/sifreEdt"
+        app:srcCompat="@drawable/icon_password_24" />
+</RelativeLayout>

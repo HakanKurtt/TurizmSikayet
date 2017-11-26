@@ -7,4 +7,25 @@
     <string name="tab_text_5">Tab 5</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="turizm_sikayet">Turizm Şikayet</string>
+    <string name="veya">Veya</string>
+    <string name="giris_yap">Giriş Yap</string>
+    <string name="acilis_arama_text">Şikayet veya marka arayın...</string>
+    <string name="giris_eposta">E-postanız</string>
+    <string name="giris_sifre">Şifreniz</string>
+    <string name="giris_giris">Giriş</string>
+    <string name="sifre_unuttum">Şifremi Unuttum</string>
+    <string name="uye_ol">Üye Ol</string>
+    <string name="kullanici_sozlesme_text">Sözleşme text içeriği...</string>
+    <string name="sikayet_basligi">Şikayet İçeriği</string>
+    <string name="label_ana_sayfa">Turizm Şikayet</string>
+    <!--<string name="sozlesmeText">
+    </string>-->
+    <string name="uyeOlBtnText">Üye Ol</string>
+    <string name="adsoyadText">Ad Soyad</string>
+    <string name="epostanızText">E-posta</string>
+    <string name="sifrenizText">Şifre</string>
+    <string name="zatenUyeText">Zaten üye misiniz? Giriş yapın</string>
+    <string name="eposta">E-posta</string>
+    <string name="gonder">Gönder</string>
 </resources>
