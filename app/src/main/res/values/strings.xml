@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TurizmSikayet</string>
+    <string name="app_name">Turizm Sikayet</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="tab_text_3">Tab 3</string>
@@ -28,4 +28,13 @@
     <string name="zatenUyeText">Zaten üye misiniz? Giriş yapın</string>
     <string name="eposta">E-posta</string>
     <string name="gonder">Gönder</string>
+
+
+    <string-array name="Markalar">
+        <item>Metro</item>
+        <item>VİB</item>
+        <item>Efe Tur</item>
+        <item>Lüks Karadeniz</item>
+        <item>Kamil Koç</item>
+    </string-array>
 </resources>

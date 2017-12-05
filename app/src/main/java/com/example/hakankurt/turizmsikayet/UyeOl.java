@@ -19,7 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
-public class UyeOl extends AppCompatActivity implements View.OnClickListener{
+public class UyeOl extends BaseClass implements View.OnClickListener{
 
     private EditText kullaniciIsimEdt;
     private EditText kullaniciMailEdt;

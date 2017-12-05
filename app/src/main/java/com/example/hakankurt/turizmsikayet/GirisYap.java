@@ -18,7 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class GirisYap extends AppCompatActivity implements View.OnClickListener{
+public class GirisYap extends BaseClass implements View.OnClickListener{
 
     private TextView uyeOlTextView;
     private Button signInButton;
@@ -125,6 +125,8 @@ public class GirisYap extends AppCompatActivity implements View.OnClickListener{
                 break;
             case R.id.girisBtn:
                 userLogin();
+               // startActivity(new Intent(GirisYap.this,MainActivity.class));
+                //finish();
                 break;
             case R.id.sifreUnuttumTxt:
                 Intent sifreUnutIntent=new Intent(GirisYap.this,SifremiUnuttum.class);

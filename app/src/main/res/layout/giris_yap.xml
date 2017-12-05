@@ -15,7 +15,8 @@
         android:layout_marginTop="49dp"
         android:ems="10"
         android:hint="@string/giris_eposta"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:text="furkan@gmail.com"/>
 
     <EditText
         android:id="@+id/sifreEdt"
@@ -26,7 +27,8 @@
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="@string/giris_sifre"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:text="123456"/>
 
     <Button
         android:id="@+id/girisBtn"

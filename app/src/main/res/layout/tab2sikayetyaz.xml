@@ -1,16 +1,86 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.hakankurt.turizmsikayet.MainActivity$PlaceholderFragment">
+    android:orientation="vertical"
+    tools:context="com.example.hakankurt.turizmsikayet.MainActivity">
 
     <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tab2 sikayetyaz"
+        android:text="Şikayetçi Olduğunuz Firma"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:textColor="#202121"/>
+    <Spinner
+        android:id="@+id/firmaListesi"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Şikayetçi Olduğunuz Firma"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textColor="#202121"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Şikayet Başlığı"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:textColor="#202121"/>
+
+    <EditText
+        android:id="@+id/edtBaslik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="3dp"
+        android:inputType="textMultiLine"
+        android:gravity="start"
+        android:maxHeight="50dp"
         />
 
-</RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Şikayet İçeriği"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:textColor="#202121"/>
+
+    <EditText
+        android:id="@+id/edtIcerik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="3dp"
+        android:inputType="textMultiLine"
+        android:gravity="start"
+        android:maxHeight="100dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnGonder"
+        android:text="Gönder"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="3dp"
+        />
+
+
+
+</LinearLayout>

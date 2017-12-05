@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class AnaSayfa extends AppCompatActivity {
+public class AnaSayfa extends BaseClass {
 
     Button girisYapBtn;
 

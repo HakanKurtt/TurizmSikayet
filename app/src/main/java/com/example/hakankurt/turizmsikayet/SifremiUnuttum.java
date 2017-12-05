@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -15,7 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class SifremiUnuttum extends AppCompatActivity implements View.OnClickListener{
+public class SifremiUnuttum extends BaseClass implements View.OnClickListener{
 
     private EditText sifreUnuttumEdt;
     private Button mailGonderBtn;
@@ -35,7 +37,6 @@ public class SifremiUnuttum extends AppCompatActivity implements View.OnClickLis
         mailGonderBtn.setOnClickListener(this);
 
         mAuth=FirebaseAuth.getInstance();
-
 
     }
 

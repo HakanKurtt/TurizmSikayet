@@ -2,7 +2,6 @@ package com.example.hakankurt.turizmsikayet;
 
 import android.graphics.Color;
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
@@ -12,14 +11,19 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.hakankurt.turizmsikayet.fragment.Bildirim_fragment;
 import com.example.hakankurt.turizmsikayet.fragment.Profil_fragment;
 import com.example.hakankurt.turizmsikayet.fragment.Search_fragment;
 import com.example.hakankurt.turizmsikayet.fragment.Sikayetlerim_fragment;
 import com.example.hakankurt.turizmsikayet.fragment.Sikayetyaz_fragment;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseClass {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -45,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //setting toolbar color
-        toolbar.setBackgroundColor(Color.parseColor("#9fe025"));
+        toolbar.setBackgroundColor(Color.parseColor("#ffffff"));
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -67,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(4).setIcon(R.drawable.ic_person_black_24dp);
 
         //setting tablayout color
-        tabLayout.setBackgroundColor(Color.parseColor("#9fe025"));
+        tabLayout.setBackgroundColor(Color.parseColor("#ffffff"));
+
 
     }
 
