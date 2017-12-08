@@ -7,80 +7,80 @@
     android:orientation="vertical"
     tools:context="com.example.hakankurt.turizmsikayet.MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Şikayetçi Olduğunuz Firma"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp"
-        android:textColor="#202121"/>
-    <Spinner
-        android:id="@+id/firmaListesi"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Şikayetçi Olduğunuz Firma"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:textColor="#202121"/>
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Şikayetçi Olduğunuz Firma"
+          android:layout_marginStart="10dp"
+          android:layout_marginEnd="10dp"
+          android:layout_marginTop="10dp"
+          android:textSize="18sp"
+          android:textColor="#202121"/>
+      <Spinner
+          android:id="@+id/firmaListesi"
+          android:layout_width="match_parent"
+          android:layout_height="40dp"
+          android:text="Şikayetçi Olduğunuz Firma"
+          android:layout_marginStart="10dp"
+          android:layout_marginEnd="10dp"
+          android:layout_marginTop="10dp"
+          android:textSize="20sp"
+          android:textColor="#202121"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Şikayet Başlığı"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp"
-        android:textColor="#202121"/>
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Şikayet Başlığı"
+          android:layout_marginStart="10dp"
+          android:layout_marginEnd="10dp"
+          android:layout_marginTop="10dp"
+          android:textSize="18sp"
+          android:textColor="#202121"/>
 
-    <EditText
-        android:id="@+id/edtBaslik"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="3dp"
-        android:inputType="textMultiLine"
-        android:gravity="start"
-        android:maxHeight="50dp"
-        />
+      <EditText
+          android:id="@+id/edtBaslik"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:layout_marginStart="10dp"
+          android:layout_marginEnd="10dp"
+          android:layout_marginTop="3dp"
+          android:inputType="textMultiLine"
+          android:gravity="start"
+          />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Şikayet İçeriği"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp"
-        android:textColor="#202121"/>
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Şikayet İçeriği"
+          android:layout_marginStart="10dp"
+          android:layout_marginEnd="10dp"
+          android:layout_marginTop="10dp"
+          android:textSize="18sp"
+          android:textColor="#202121"/>
 
-    <EditText
-        android:id="@+id/edtIcerik"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="3dp"
-        android:inputType="textMultiLine"
-        android:gravity="start"
-        android:maxHeight="100dp"
-        />
+      <EditText
+          android:id="@+id/edtIcerik"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:layout_marginStart="10dp"
+          android:layout_marginEnd="10dp"
+          android:layout_marginTop="3dp"
+          android:inputType="textMultiLine"
+          android:maxLines="3"
+          android:gravity="start"
+         android:scrollbars="vertical"
+          />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnGonder"
-        android:text="Gönder"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="3dp"
-        />
-
+      <Button
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/btnGonder"
+          android:text="Gönder"
+          android:layout_marginStart="10dp"
+          android:layout_marginEnd="10dp"
+          android:layout_marginTop="3dp"
+          android:layout_gravity="bottom"
+          />
 
 
 </LinearLayout>

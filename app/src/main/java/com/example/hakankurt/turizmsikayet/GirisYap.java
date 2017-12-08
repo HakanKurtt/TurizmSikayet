@@ -125,8 +125,8 @@ public class GirisYap extends BaseClass implements View.OnClickListener{
                 break;
             case R.id.girisBtn:
                 userLogin();
-               // startActivity(new Intent(GirisYap.this,MainActivity.class));
-                //finish();
+              // startActivity(new Intent(GirisYap.this,MainActivity.class));
+              //  finish();
                 break;
             case R.id.sifreUnuttumTxt:
                 Intent sifreUnutIntent=new Intent(GirisYap.this,SifremiUnuttum.class);

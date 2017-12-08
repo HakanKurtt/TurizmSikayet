@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:showDividers="end"
+    >
+
+    <TextView
+        android:id="@+id/tvTarih"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="right"
+        android:text="TextView" />
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="horizontal"
+     >
+     <ImageView
+
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/imView"
+         app:srcCompat="@android:drawable/ic_menu_gallery"
+         android:layout_marginTop="16dp"
+         android:layout_weight="0.25"
+                />
+
+     <TextView
+         android:id="@+id/tvBaslik"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="16dp"
+         android:layout_weight="0.75"
+         android:text="TextView" />
+ </LinearLayout>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="horizontal"
+     android:layout_marginTop="16dp"
+     android:layout_marginBottom="16dp">
+     <TextView
+         android:id="@+id/tvİcerik"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="33dp"
+         android:layout_gravity="left"
+         android:layout_weight="1"
+         android:layout_marginEnd="15dp"
+         android:text="TextView"
+         />
+ </LinearLayout>
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="horizontal"
+     android:layout_marginBottom="10dp">
+     <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         app:srcCompat="@drawable/ic_person_black_24dp"
+         android:layout_gravity="left"
+         android:layout_marginStart="33dp"
+        />
+
+     <TextView
+         android:id="@+id/tvUser"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="bottom"
+         android:text="İsim" />
+     <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/imShare"
+        android:layout_gravity="left"
+         android:layout_weight="1"
+         android:src="@android:drawable/ic_menu_share"
+         />
+     <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+               android:src="@android:drawable/ic_menu_view"
+         android:layout_gravity="left"
+         />
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/tvOkunma"
+         android:text="5"
+         android:layout_gravity="center"
+         android:layout_marginEnd="15dp"/>
+ </LinearLayout>
+
+
+</LinearLayout>

@@ -30,7 +30,8 @@
         </activity>
         <activity android:name=".GirisYap" />
         <activity android:name=".UyeOl" />
-        <activity android:name=".SifremiUnuttum"></activity>
+        <activity android:name=".SifremiUnuttum" />
+        <activity android:name=".DestekActivity"></activity>
     </application>
 
 </manifest>

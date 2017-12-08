@@ -121,7 +121,7 @@ public class Sikayetyaz_fragment extends android.support.v4.app.Fragment {
 
     }
 
-    public String GetUserID(){  // firebase kullanıcı id'sini döndürür.
+    public String GetUserID(){  // oturum açmış olan firebase kullanıcısının id'sini döndürür.
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         return currentFirebaseUser.getUid();
     }

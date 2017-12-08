@@ -5,7 +5,6 @@ import android.widget.Toast;
 
 
 public class BaseClass extends AppCompatActivity {
-
     public void MesajYaz(String s)
     {
         Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();

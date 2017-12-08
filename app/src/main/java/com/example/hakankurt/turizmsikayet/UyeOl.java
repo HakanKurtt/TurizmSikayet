@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
@@ -27,19 +28,13 @@ public class UyeOl extends BaseClass implements View.OnClickListener{
     private Button signUpButton;
     private TextView signInTextView;
     private ProgressBar progressBar;
-
-
-    //Firebase authentication;
+   // private FirebaseAnalytics analytics;
+    private DBHelper db;
     private FirebaseAuth mAuth;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.uye_ol_layout);
-
-
 
         kullaniciIsimEdt=(EditText)findViewById(R.id.kullaniciAdEdt);
         kullaniciMailEdt=(EditText)findViewById(R.id.kullaniciEpostaEdt);
@@ -52,6 +47,9 @@ public class UyeOl extends BaseClass implements View.OnClickListener{
         signInTextView.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
+       // analytics=FirebaseAnalytics.getInstance(this);
+
+        db=new DBHelper(this);
 
     }
 
@@ -104,10 +102,17 @@ public class UyeOl extends BaseClass implements View.OnClickListener{
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     progressBar.setVisibility(View.GONE);
+
+                   // analytics.setUserProperty("Adi",kullaniciIsimEdt.getText().toString());
+
+                    db.DB_KullaniciEkle(kullaniciIsimEdt.getText().toString(),kullaniciMailEdt.getText().toString());
+
                     //giris islemi başarıyla gerçekleştiyse
                     Intent intent=new Intent(UyeOl.this,MainActivity.class);
+
                     //Tüm açık aktiviteleri kapat. Activity stackinin en üstüne taşı.
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
                     startActivity(intent);
                 }else{
                     if(task.getException() instanceof FirebaseAuthUserCollisionException){

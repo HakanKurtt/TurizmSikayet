@@ -25,19 +25,10 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends BaseClass {
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
+
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
+
     private ViewPager mViewPager;
 
     @Override
@@ -45,11 +36,11 @@ public class MainActivity extends BaseClass {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         //setting toolbar color
-        toolbar.setBackgroundColor(Color.parseColor("#ffffff"));
+       // toolbar.setBackgroundColor(Color.parseColor("#ffffff"));
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -99,10 +90,6 @@ public class MainActivity extends BaseClass {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
         int countTabItem;
         public SectionsPagerAdapter(FragmentManager fm) {
