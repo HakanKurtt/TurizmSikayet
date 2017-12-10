@@ -19,6 +19,9 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class UyeOl extends BaseClass implements View.OnClickListener{
 
@@ -103,11 +106,8 @@ public class UyeOl extends BaseClass implements View.OnClickListener{
                 if(task.isSuccessful()){
                     progressBar.setVisibility(View.GONE);
 
-                   // analytics.setUserProperty("Adi",kullaniciIsimEdt.getText().toString());
-
-                    db.DB_KullaniciEkle(kullaniciIsimEdt.getText().toString(),kullaniciMailEdt.getText().toString());
-
                     //giris islemi başarıyla gerçekleştiyse
+                    UyeEkle(kullaniciIsimEdt.getText().toString());
                     Intent intent=new Intent(UyeOl.this,MainActivity.class);
 
                     //Tüm açık aktiviteleri kapat. Activity stackinin en üstüne taşı.
@@ -141,6 +141,15 @@ public class UyeOl extends BaseClass implements View.OnClickListener{
             startActivity(signInIntent);
         }
 
+    }
+
+    public void UyeEkle(String UyeAdi)  // kullanıcı kayıt olunca Firebase'te Uyeler tablosuna üye ekler.
+    {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference();
+        UyeClass uye=new UyeClass(UyeAdi,user.getUid(),user.getEmail());
+        myRef.child("Uyeler").child(user.getUid()).setValue(uye);
     }
 
 }

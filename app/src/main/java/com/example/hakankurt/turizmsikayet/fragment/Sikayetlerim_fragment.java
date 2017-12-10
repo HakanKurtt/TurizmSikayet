@@ -6,15 +6,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hakankurt.turizmsikayet.ListeAdapterTab3;
 import com.example.hakankurt.turizmsikayet.R;
-import com.example.hakankurt.turizmsikayet.Sikayet;
+import com.example.hakankurt.turizmsikayet.SikayetClass;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,7 +26,7 @@ import java.util.ArrayList;
 
 public class Sikayetlerim_fragment extends Fragment {
 
-    ArrayList<Sikayet> arrayList;
+    ArrayList<SikayetClass> arrayList;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
     ListView list;
@@ -55,9 +53,10 @@ public class Sikayetlerim_fragment extends Fragment {
                         ListeAdapterTab3 adapter=new ListeAdapterTab3(getActivity());
                         for (DataSnapshot snapshot:dataSnapshot.getChildren())
                         {
-                            Sikayet sikayetler=snapshot.getValue(Sikayet.class);
+                            SikayetClass sikayetler=snapshot.getValue(SikayetClass.class);
                             if (sikayetler.getUyeID().equals(GetUserID()))
                             {
+                                sikayetler.setSikayetID(snapshot.getKey());
                                 adapter.add(sikayetler);
                             }
                         }

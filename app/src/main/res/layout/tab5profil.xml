@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
+    android:id="@+id/linearLay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -13,7 +13,8 @@
        android:layout_width="match_parent"
        android:layout_height="100dp"
        android:orientation="vertical"
-       android:background="#e0e0e0">
+       android:background="#e0e0e0"
+       android:id="@+id/linearPro1">
 
      <ImageView
          android:layout_width="wrap_content"
@@ -22,7 +23,9 @@
          android:layout_marginTop="20dp"
          android:layout_marginStart="10dp"
          android:layout_marginEnd="10dp"
-         android:layout_gravity="center"/>
+         android:layout_gravity="center"
+         android:id="@+id/imProfil"
+         />
      <TextView
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
@@ -38,7 +41,18 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:orientation="horizontal"
-       android:background="#e0e0e0">
+       android:background="#e0e0e0"
+       android:id="@+id/linearPro2">
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Ayarlar"
+           android:id="@+id/tvAyarlar"
+           android:gravity="center"
+           android:layout_weight="1"
+           android:layout_marginBottom="10dp"
+           android:textColor="@color/colorAccent"
+           />
        <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
@@ -64,17 +78,18 @@
 
    <LinearLayout
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
+       android:layout_height="match_parent"
        android:orientation="vertical"
        android:layout_marginTop="10dp">
-     <TextView
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:text="Üyelik Bilgileri"
-         android:layout_weight="1"
-         android:textSize="18sp"
-         android:layout_marginStart="10dp"
-         android:gravity="start"/>
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="10dp"
+           android:layout_weight="1"
+           android:gravity="start"
+           android:text="Üyelik Bilgileri"
+           android:textSize="18sp" />
      <TextView
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
@@ -85,8 +100,11 @@
      <EditText
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         android:layout_margin="5dp"
+         android:layout_marginStart="5dp"
+         android:layout_marginEnd="5dp"
+         android:layout_marginTop="1dp"
          android:drawableRight="@mipmap/ic_edit"
+         android:id="@+id/etUserName"
          />
      <TextView
          android:layout_width="match_parent"
@@ -98,8 +116,11 @@
      <EditText
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         android:layout_margin="5dp"
-         android:drawableRight="@mipmap/ic_edit"/>
+         android:layout_marginStart="5dp"
+         android:layout_marginEnd="5dp"
+         android:layout_marginTop="1dp"
+         android:drawableRight="@mipmap/ic_edit"
+         android:id="@+id/etUserMail"/>
      <TextView
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
@@ -110,7 +131,9 @@
      <EditText
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         android:layout_margin="5dp"
+         android:layout_marginStart="5dp"
+         android:layout_marginEnd="5dp"
+         android:layout_marginTop="1dp"
          android:drawableRight="@mipmap/ic_edit"/>
 
      <TextView
@@ -123,7 +146,9 @@
      <EditText
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         android:layout_margin="5dp"
+         android:layout_marginStart="5dp"
+         android:layout_marginEnd="5dp"
+         android:layout_marginTop="1dp"
          android:drawableRight="@mipmap/ic_edit"/>
 
    </LinearLayout>

@@ -17,7 +17,7 @@ import com.google.firebase.auth.UserInfo;
  * Created by FURKAN on 3.12.2017.
  */
 
-public class ListeAdapterTab1 extends ArrayAdapter<Sikayet>{
+public class ListeAdapterTab1 extends ArrayAdapter<SikayetClass>{
 
 
     public ListeAdapterTab1(@NonNull Context context) {
@@ -29,7 +29,7 @@ public class ListeAdapterTab1 extends ArrayAdapter<Sikayet>{
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Sikayet sikayet=getItem(position);
+        SikayetClass sikayet=getItem(position);
 
         if (convertView==null)
         {
@@ -43,23 +43,10 @@ public class ListeAdapterTab1 extends ArrayAdapter<Sikayet>{
         tvTarih.setText(sikayet.Tarih);
         tvBaslik.setText(sikayet.Baslik);
         tvIcerik.setText(sikayet.Icerik);
-        tvUser.setText(GetUserName(sikayet.getUyeID()));
+        tvUser.setText(sikayet.getUyeAdi());
         return convertView;
     }
 
-    public String GetUserName(String uuid){  // firebase kullanıcı id'sini döndürür.
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-       // if (user!=null)
-        //{
-            for(UserInfo profile:user.getProviderData())
-            {
-                if (profile.getUid().equals(uuid))
-                {
-                    return profile.getDisplayName();
-                }
-            }
-       // }
-        return null;
-    }
+
 
 }

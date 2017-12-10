@@ -20,7 +20,7 @@ import android.widget.Toast;
 import com.example.hakankurt.turizmsikayet.ListeAdapterTab1;
 import com.example.hakankurt.turizmsikayet.MainActivity;
 import com.example.hakankurt.turizmsikayet.R;
-import com.example.hakankurt.turizmsikayet.Sikayet;
+import com.example.hakankurt.turizmsikayet.SikayetClass;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,11 +31,10 @@ import java.util.ArrayList;
 
 public class Search_fragment extends Fragment{
     AutoCompleteTextView tvAuto;
-    ArrayList<Sikayet> arrayList;
+    ArrayList<SikayetClass> arrayList;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
     ListView list;
-    TextView tvUser;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -87,9 +86,9 @@ public class Search_fragment extends Fragment{
                 try {
                     ListeAdapterTab1 adapter = new ListeAdapterTab1(getActivity());
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                       Sikayet sikayetler = snapshot.getValue(Sikayet.class);
-                       // id = snapshot.getKey();
-                      //  otoparkUcretler.setUcretId(id);
+                       SikayetClass sikayetler = snapshot.getValue(SikayetClass.class);
+                       String id = snapshot.getKey();
+                        sikayetler.setSikayetID(id);
                         if (markaId.equals(sikayetler.getMarkaID()))
                         {
                             adapter.add(sikayetler);

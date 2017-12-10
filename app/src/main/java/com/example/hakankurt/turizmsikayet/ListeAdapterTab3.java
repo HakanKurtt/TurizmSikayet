@@ -4,6 +4,7 @@ package com.example.hakankurt.turizmsikayet;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +13,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserInfo;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
-public class ListeAdapterTab3 extends ArrayAdapter<Sikayet> {
+import static com.example.hakankurt.turizmsikayet.DBHelper.TAG;
+
+public class ListeAdapterTab3 extends ArrayAdapter<SikayetClass> {
 
     public ListeAdapterTab3(@NonNull Context context) {
         super(context, 0);
@@ -24,8 +30,8 @@ public class ListeAdapterTab3 extends ArrayAdapter<Sikayet> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Sikayet sikayet=getItem(position);
+    public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        final SikayetClass sikayet=getItem(position);
 
         if (convertView==null)
         {
@@ -39,7 +45,11 @@ public class ListeAdapterTab3 extends ArrayAdapter<Sikayet> {
         imDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(),"tıklandı",Toast.LENGTH_LONG).show();
+               // Toast.makeText(getContext(),"tıklandı indis: "+sikayet.getSikayetID(),Toast.LENGTH_LONG).show();
+                if (SikayetSil(sikayet.getSikayetID()))
+                {
+                    Toast.makeText(getContext(),"Şikayet silindi.",Toast.LENGTH_LONG).show();
+                }
             }
         });
         String baslik=sikayet.Baslik;
@@ -56,6 +66,21 @@ public class ListeAdapterTab3 extends ArrayAdapter<Sikayet> {
         tvBaslik.setText(baslik);
         tvIcerik.setText(icerik);
         return convertView;
+    }
+
+    public boolean SikayetSil(String sikayetID)
+    {
+       try{
+           DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Sikayetler");
+           ref.child(sikayetID).removeValue();
+           return true;
+       }
+       catch (Exception e)
+       {
+           Toast.makeText(getContext(),e.getMessage().toString(),Toast.LENGTH_LONG).show();
+           return false;
+       }
+
     }
 
 }
