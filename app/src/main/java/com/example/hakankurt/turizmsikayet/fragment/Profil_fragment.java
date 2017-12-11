@@ -1,6 +1,8 @@
 package com.example.hakankurt.turizmsikayet.fragment;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -33,9 +35,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import java.io.File;
+import java.io.IOException;
 
 import static android.app.Activity.RESULT_OK;
 import static com.example.hakankurt.turizmsikayet.DBHelper.TAG;
@@ -64,6 +70,13 @@ public class Profil_fragment extends Fragment {
         etUserMail=rootView.findViewById(R.id.etUserMail);
         etUserMail.setText(GetUserMail());
         KullaniciAdiYaz();
+        try{
+            FotoGoster();
+        }
+        catch (Exception e)
+        {
+
+        }
 
         imProfil=rootView.findViewById(R.id.imProfil);
         imProfil.setOnClickListener(new View.OnClickListener() {
@@ -170,17 +183,39 @@ public class Profil_fragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {    // galeriden seçilen resim bu datanın içinde tutulur.
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode==1 && resultCode==RESULT_OK){    // seçilen fotoğraf firebase yüklenir.
+        if (requestCode==1 && resultCode==RESULT_OK){    // seçilen fotoğraf firebase yüklenir.
             Uri uri=data.getData();
-            StorageReference ref=referans.child("a");
+            StorageReference ref=referans.child(GetUserID());
             ref.putFile(uri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                     if (task.isSuccessful())
                     {
-                        Toast.makeText(getActivity(),"tamamlnadı.",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(),"Fotoğraf Yüklendi.",Toast.LENGTH_LONG).show();
+                        String fotoUrl=task.getResult().getDownloadUrl().toString();
+                        FotoGoster();
                     }
+
                 }
             });
     }
-}}
+}
+
+    private void FotoGoster() {
+        StorageReference indir=referans.child(GetUserID());
+        File localFile= null;
+        try {
+            localFile = File.createTempFile("images","jpg");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        final File finalLocalFile = localFile;
+        indir.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                Bitmap bitmap= BitmapFactory.decodeFile(finalLocalFile.getAbsolutePath());
+                imProfil.setImageBitmap(bitmap);
+            }
+        });
+    }
+}

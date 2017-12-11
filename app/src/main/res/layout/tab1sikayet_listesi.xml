@@ -24,10 +24,10 @@
      >
      <ImageView
 
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:id="@+id/imView"
-         app:srcCompat="@android:drawable/ic_menu_gallery"
+         android:layout_width="80dp"
+         android:layout_height="80dp"
+         android:id="@+id/imFirma"
+         app:srcCompat="@mipmap/metro"
          android:layout_marginTop="16dp"
          android:layout_weight="0.25"
                 />
@@ -66,7 +66,7 @@
      <ImageView
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         app:srcCompat="@drawable/ic_person_black_24dp"
+         app:srcCompat="@mipmap/user_profile"
          android:layout_gravity="left"
          android:layout_marginStart="33dp"
         />
@@ -75,7 +75,7 @@
          android:id="@+id/tvUser"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:layout_gravity="bottom"
+         android:layout_gravity="center"
          android:text="İsim" />
      <ImageView
          android:layout_width="wrap_content"

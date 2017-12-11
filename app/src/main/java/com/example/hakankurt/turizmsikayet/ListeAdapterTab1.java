@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,10 +40,41 @@ public class ListeAdapterTab1 extends ArrayAdapter<SikayetClass>{
         TextView tvBaslik=convertView.findViewById(R.id.tvBaslik);
         TextView tvIcerik=convertView.findViewById(R.id.tvİcerik);
         TextView tvUser=convertView.findViewById(R.id.tvUser);
+        ImageView imFirma=convertView.findViewById(R.id.imFirma);
 
+       if (sikayet.getMarkaID().equals("1")) // metro
+       {
+           imFirma.setImageResource(R.mipmap.metro);
+       }
+       else if (sikayet.getMarkaID().equals("2"))
+       {
+           imFirma.setImageResource(R.mipmap.vib);
+       }
+       else if (sikayet.getMarkaID().equals("3"))
+       {
+           imFirma.setImageResource(R.mipmap.efe);
+       }
+       else if (sikayet.getMarkaID().equals("4"))
+       {
+           imFirma.setImageResource(R.mipmap.luks);
+       }
+       else
+       {
+           imFirma.setImageResource(R.mipmap.kamil);
+       }
+        String baslik=sikayet.Baslik;
+        String icerik=sikayet.Icerik;
+        if (baslik.length()>40)
+        {
+            baslik=baslik.substring(0,50)+"...";
+        }
+        if (icerik.length()>50)
+        {
+            icerik=icerik.substring(0,60)+"...";
+        }
         tvTarih.setText(sikayet.Tarih);
-        tvBaslik.setText(sikayet.Baslik);
-        tvIcerik.setText(sikayet.Icerik);
+        tvBaslik.setText(baslik);
+        tvIcerik.setText(icerik);
         tvUser.setText(sikayet.getUyeAdi());
         return convertView;
     }

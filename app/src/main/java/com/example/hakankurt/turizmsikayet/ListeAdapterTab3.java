@@ -37,7 +37,7 @@ public class ListeAdapterTab3 extends ArrayAdapter<SikayetClass> {
         {
             convertView= LayoutInflater.from(getContext()).inflate(R.layout.tab3sikayetlerim_listesi,parent,false);
         }
-        ImageView imDelete;
+        ImageView imDelete,imFirma1;
         TextView tvTarih=convertView.findViewById(R.id.tvTarih1);
         TextView tvBaslik=convertView.findViewById(R.id.tvBaslik1);
         TextView tvIcerik=convertView.findViewById(R.id.tvİcerik1);
@@ -56,15 +56,38 @@ public class ListeAdapterTab3 extends ArrayAdapter<SikayetClass> {
         String icerik=sikayet.Icerik;
         if (baslik.length()>40)
         {
-            baslik=baslik.substring(0,37)+"...";
+            baslik=baslik.substring(0,50)+"...";
         }
         if (icerik.length()>50)
         {
-            icerik=icerik.substring(0,47)+"...";
+            icerik=icerik.substring(0,60)+"...";
         }
         tvTarih.setText(sikayet.Tarih);
         tvBaslik.setText(baslik);
         tvIcerik.setText(icerik);
+
+        imFirma1=convertView.findViewById(R.id.imFirma1);
+        if (sikayet.getMarkaID().equals("1")) // metro
+        {
+            imFirma1.setImageResource(R.mipmap.metro);
+        }
+        else if (sikayet.getMarkaID().equals("2"))
+        {
+            imFirma1.setImageResource(R.mipmap.vib);
+        }
+        else if (sikayet.getMarkaID().equals("3"))
+        {
+            imFirma1.setImageResource(R.mipmap.efe);
+        }
+        else if (sikayet.getMarkaID().equals("4"))
+        {
+            imFirma1.setImageResource(R.mipmap.luks);
+        }
+        else
+        {
+            imFirma1.setImageResource(R.mipmap.kamil);
+        }
+
         return convertView;
     }
 
